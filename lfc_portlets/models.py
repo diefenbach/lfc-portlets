@@ -18,6 +18,7 @@ from tagging.forms import TagField
 from portlets.models import Portlet
 
 # lfc imports
+import lfc.utils
 from lfc.models import BaseContent
 from lfc.fields.autocomplete import AutoCompleteTagInput
 
@@ -83,13 +84,20 @@ class ContentPortlet(Portlet):
     def render(self, context):
         """Renders the portlet as HTML.
         """
-        objs = BaseContent.objects.filter(
+        request = context.get("request")
+        temp = BaseContent.objects.filter(
             language__in=("0", translation.get_language()))
 
         if self.tags:
-            objs = tagging.managers.ModelTaggedItemManager().with_all(self.tags, objs)[:self.limit]
+            temp = tagging.managers.ModelTaggedItemManager().with_all(self.tags, temp)[:self.limit]
         else:
-            objs = objs[:self.limit]
+            temp = temp[:self.limit]
+
+        objs = []
+        for obj in temp:
+            obj = obj.get_content_object()
+            if lfc.utils.registration.get_info(obj) and obj.has_permission(request.user, "view") and obj.is_active(request.user):
+                objs.append(obj)
 
         return render_to_string("lfc/portlets/pages_portlet.html", {
             "title": self.title,
