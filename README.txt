@@ -1,12 +1,12 @@
 What is it?
 ===========
 
-The standard portlets for LFC
+Standard portlets for LFC.
 
 Changes
 =======
 
-1.0 (....-..-..)
-------------------------
+1.0 (2014-06-17)
+----------------
 
 * Initial public release
