@@ -1,7 +1,7 @@
 What is it?
 ===========
 
-Standard portlets for LFC.
+Standard portlets for `LFC <http://pypi.python.org/pypi/django-lfc/>`_
 
 Changes
 =======
