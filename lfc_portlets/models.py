@@ -21,6 +21,7 @@ from portlets.models import Portlet
 import lfc.utils
 from lfc.models import BaseContent
 from lfc.fields.autocomplete import AutoCompleteTagInput
+from lfc.fields.wysiwyg import WYSIWYGInput
 
 
 class NavigationPortlet(Portlet):
@@ -199,3 +200,7 @@ class TextPortletForm(forms.ModelForm):
     """
     class Meta:
         model = TextPortlet
+
+    def __init__(self, *args, **kwargs):
+        super(TextPortletForm, self).__init__(*args, **kwargs)
+        self.fields["text"].widget = WYSIWYGInput()
