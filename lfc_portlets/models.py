@@ -100,7 +100,7 @@ class ContentPortlet(Portlet):
             if lfc.utils.registration.get_info(obj) and obj.has_permission(request.user, "view") and obj.is_active(request.user):
                 objs.append(obj)
 
-        return render_to_string("lfc/portlets/pages_portlet.html", {
+        return render_to_string("lfc/portlets/content_portlet.html", {
             "title": self.title,
             "objs": objs,
         })
