@@ -29,5 +29,6 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
+        'django-portlets == 1.1.1',
     ],
 )

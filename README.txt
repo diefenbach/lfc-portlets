@@ -16,6 +16,7 @@ Changes
 
 * Improves loading of WYSIWYG widget
 * Renames page_portlet.html to content_portlet.html
+* Adds django-portlets to ``install_requires``
 
 1.0 (2014-06-17)
 ----------------
