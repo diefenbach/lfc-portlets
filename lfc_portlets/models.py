@@ -62,6 +62,7 @@ class NavigationPortletForm(forms.ModelForm):
     """
     class Meta:
         model = NavigationPortlet
+        exclude = ()
 
 
 class ContentPortlet(Portlet):
@@ -118,6 +119,7 @@ class ContentPortletForm(forms.ModelForm):
 
     class Meta:
         model = ContentPortlet
+        exclude = ()
 
 
 class RandomPortlet(Portlet):
@@ -165,6 +167,7 @@ class RandomPortletForm(forms.ModelForm):
 
     class Meta:
         model = RandomPortlet
+        exclude = ()
 
 
 class TextPortlet(Portlet):
@@ -200,6 +203,7 @@ class TextPortletForm(forms.ModelForm):
     """
     class Meta:
         model = TextPortlet
+        exclude = ()
 
     def __init__(self, *args, **kwargs):
         super(TextPortletForm, self).__init__(*args, **kwargs)
