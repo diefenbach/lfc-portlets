@@ -11,6 +11,12 @@ See `LFC`_ for more information.
 Changes
 =======
 
+1.1 (2015-05-10)
+----------------
+
+* Adds Django 1.8 support
+* Adds initial migrations
+
 1.0.1 (2014-06-26)
 ------------------
 
